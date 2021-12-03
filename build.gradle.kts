@@ -12,7 +12,7 @@ plugins {
     id("de.marcphilipp.nexus-publish") version "0.4.0"
 }
 
-group = "io.johnsonlee"
+group = "io.neighbwang"
 version = "1.0.0"
 
 
@@ -51,7 +51,7 @@ val OSSRH_USERNAME = project.properties["OSSRH_USERNAME"]?.toString() ?: System.
 val OSSRH_PASSWORD = project.properties["OSSRH_PASSWORD"]?.toString() ?: System.getenv("OSSRH_PASSWORD")
 
 nexusStaging {
-    packageGroup = "io.johnsonlee"
+    packageGroup = "io.neighbwang"
     username = OSSRH_USERNAME
     password = OSSRH_PASSWORD
     numberOfRetries = 50
@@ -87,12 +87,12 @@ publishing {
             pom.withXml {
                 asNode().apply {
                     appendNode("name", project.name)
-                    appendNode("url", "https://github.com/johnsonlee/${project.name}")
+                    appendNode("url", "https://github.com/neighbwang/${project.name}")
                     appendNode("description", project.description ?: project.name)
                     appendNode("scm").apply {
-                        appendNode("connection", "scm:git:git://github.com/johnsonlee/${project.name}.git")
-                        appendNode("developerConnection", "scm:git:git@github.com:johnsonlee/${project.name}.git")
-                        appendNode("url", "https://github.com/johnsonlee/${project.name}")
+                        appendNode("connection", "scm:git:git://github.com/neighbwang/${project.name}.git")
+                        appendNode("developerConnection", "scm:git:git@github.com:neighbwang/${project.name}.git")
+                        appendNode("url", "https://github.com/neighbwang/${project.name}")
                     }
                     appendNode("licenses").apply {
                         appendNode("license").apply {
@@ -102,9 +102,9 @@ publishing {
                     }
                     appendNode("developers").apply {
                         appendNode("developer").apply {
-                            appendNode("id", "johnsonlee")
-                            appendNode("name", "Johnson Lee")
-                            appendNode("email", "g.johnsonlee@gmail.com")
+                            appendNode("id", "neighbwang")
+                            appendNode("name", "Wang Zhiguo")
+                            appendNode("email", "wangzhiguo13120140@163.com")
                         }
                     }
                 }
